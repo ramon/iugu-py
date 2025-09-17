@@ -7,7 +7,25 @@ authors = [
     { name = "Ramon Soares", email = "ramongsoares@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "requests>=2.32.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "black>=24.0.0",
+]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.black]
+line-length = 100
+target-version = ["py312", "py313"]
+include = ".(py|pyi)$"
 
 [build-system]
 requires = ["uv_build>=0.8.15,<0.9.0"]

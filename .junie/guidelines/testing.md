@@ -1,0 +1,11 @@
+2. Testing
+- Test framework: Pytest is the adopted framework. Run with `pytest` (configured in `[tool.pytest.ini_options]` in pyproject).
+- Structure:
+  - Tests live in `tests/` and follow the pattern `test_*.py`.
+  - The file `tests/conftest.py` ensures `src/` is on `sys.path` for local runs without installation.
+- Execution:
+  - Run all tests: `pytest`
+  - Quiet execution is the default via `addopts = "-q"` in pyproject.
+- Adding new tests:
+  - For each new feature or bugfix, add corresponding tests under `tests/`.
+  - Example import used in tests: `import iugupy`
